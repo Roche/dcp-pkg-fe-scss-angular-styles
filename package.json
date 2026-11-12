@@ -1,0 +1,56 @@
+{
+  "name": "@open-dcp/angular-styles",
+  "version": "17.0.41",
+  "main": "src/index.scss",
+  "style": "src/index.scss",
+  "exports": {
+    ".": {
+      "import": "./src/index.scss",
+      "default": "./src/index.scss"
+    },
+    "./variables": {
+      "import": "./src/styles/variables.scss",
+      "default": "./src/styles/variables.scss"
+    },
+    "./form": {
+      "import": "./src/styles/form/_index.scss",
+      "default": "./src/styles/form/_index.scss"
+    },
+    "./basic-components": {
+      "import": "./src/styles/components/_index.scss",
+      "default": "./src/styles/components/_index.scss"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "mkdir dist && cp -r src/ dist/",
+    "build:win": "copy src\\* dist\\*"
+  },
+  "peerDependencies": {
+    "@angular/cdk": "^17.3.0",
+    "@angular/material": "^17.3.0",
+    "@open-dcp/styles": ">=0.1.27"
+  },
+  "devDependencies": {
+    "@angular/animations": "^17.3.0",
+    "@angular/cdk": "^17.3.10",
+    "@angular/common": "^17.3.0",
+    "@angular/core": "^17.3.0",
+    "@angular/forms": "^17.3.0",
+    "@angular/material": "^17.3.10",
+    "@angular/platform-browser": "^17.3.0",
+    "@open-dcp/styles": ">=0.1.27",
+    "rxjs": "^7.8.2",
+    "zone.js": "~0.14.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Roche/dcp-pkg-fe-scss-angular-styles.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

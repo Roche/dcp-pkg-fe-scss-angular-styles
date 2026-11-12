@@ -1,0 +1,126 @@
+
+@import "../variables";
+
+.odcp-audit-trail-manager {
+  max-width: 460px;
+  color: rgba(0, 0, 0, .54);
+  transition: color .1s;
+  padding-top: 75px !important;
+
+  .header {
+    background-color: runtime-primary($primary-dc);
+    color: $primary-contrast;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .action-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  .mat-icon {
+    color: inherit;
+    position: relative;
+  }
+
+  .close-help-button {
+    float: right;
+    font-size: 18px;
+  }
+
+  .loading-indicator-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .audit-trail-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+
+    .audit-trail-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      border-bottom: 1px solid runtime-primary($primary-dc);
+
+
+      .audit-trail-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .username-action-container {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+      }
+
+
+      .audit-color- {
+        &create {
+          background-color: $dashboard_green;
+          color: $primary-contrast !important;
+          --mdc-chip-label-text-color: $primary-contrast !important;
+        }
+
+        &update {
+          background-color: $dashboard_blue;
+          color: $primary-contrast !important;
+          --mdc-chip-label-text-color: $primary-contrast !important;
+        }
+
+        &delete {
+          background-color: $dashboard_error_red;
+          color: $primary-contrast !important;
+          --mdc-chip-label-text-color: $primary-contrast !important;
+        }
+
+      }
+
+      .audit-trail-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+
+        .reason-text {
+          font-size: 0.8em;
+          font-style: italic;
+        }
+      }
+    }
+
+  }
+
+  /* More effective - The correct way to use !important here */
+  .mat-mdc-chip-text-label {
+    color: $primary-contrast !important;
+  }
+
+  .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
+    color: $primary-contrast !important;
+  }
+
+  mat-chip-list {
+    mat-chip {
+      padding: 2px 4px;
+      border-radius: 4px;
+      span {
+        color: white !important;
+      }
+    }
+  }
+}

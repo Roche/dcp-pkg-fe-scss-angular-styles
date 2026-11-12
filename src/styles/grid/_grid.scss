@@ -1,0 +1,91 @@
+@import '../variables';
+
+/* Add any specific styling for your table container */
+odcp-grid {
+  /* Add any specific styling for your table container */
+  .dcp-table-container {
+    overflow: auto; /* Important for virtual scrolling */
+    position: relative; /* For sticky header to work correctly */
+
+    .dcp-table-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+
+      .dcp-download-button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// Table Container
+.dcp-table-container {
+  height: 400px;
+  overflow-y: auto;
+  background: white;
+
+  table {
+    width: 100%;
+    table-layout: auto;
+    margin: 0;
+    max-width: none;
+    border-width: 0;
+    border-color: inherit;
+    border-collapse: separate;
+    border-spacing: 0;
+    empty-cells: show;
+    outline: 0;
+
+    td,
+    th {
+      padding: 8px;
+      text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    th {
+      font-weight: bold;
+      border-bottom: 1px solid runtime-primary-light($light-blue);
+
+      i {
+        color: $text-color-light;
+      }
+      .odcp-table_filter-wrapper {
+        display: flex;
+        align-items: center;
+        > mat-icon {
+          font-size: 15px;
+          width: 15px;
+        }
+      }
+    }
+
+    td {
+      border-bottom: 1px solid runtime-primary-light($light-blue);
+    }
+
+    // Highlight the data row the user is pointing at. The new odcp-grid does
+    // not provide a row-hover state out of the box, so we add it here using the
+    // same subtle light-blue used by the previous grid implementation.
+    // The `firstRow`/`lastRow` are zero-height spacer rows used for virtual
+    // scrolling, so they are excluded from the hover effect.
+    tbody tr:not(.firstRow):not(.lastRow):hover > td {
+      background-color: $row-hover-background;
+      transition: background-color 0.15s ease-in-out;
+    }
+
+    tr.firstRow > td,
+    tr.lastRow > td {
+      padding: 0;
+    }
+
+    tr.lastRow > td {
+      border: 0;
+    }
+  }
+}

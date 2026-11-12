@@ -1,0 +1,66 @@
+@import "../variables";
+
+.odcp-treeview {
+  --mat-tree-node-min-height: 32px;
+
+  .mat-mdc-icon-button.mat-mdc-button-base {
+    --mdc-icon-button-state-layer-size: 32px;
+  }
+
+  &--invisible {
+    display: none;
+  }
+
+  &_group {
+    max-height: 400px;
+    overflow: scroll;
+  }
+
+  ul, li {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+  }
+  .mat-nested-tree-node div[role=group] {
+    padding-left: 40px;
+  }
+  div[role=group] > .mat-tree-node {
+    padding-left: 40px;
+  }
+  > .mat-tree-node {
+    padding-left: 40px;
+  }
+
+  // Each node spans the full width of the row so trailing actions can be
+  // aligned to the end, independent of the node text length.
+  // This selector covers both leaf nodes (`<mat-tree-node>` host) and parent
+  // nodes (the inner `<div class="mat-tree-node">` rendered by
+  // `<mat-nested-tree-node>`), so hover applies to both row types.
+  .mat-tree-node {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    transition: background-color 0.15s ease-in-out;
+
+    // Hover affordance so users can easily locate the active row and its menu.
+    &:hover {
+      background-color: $row-hover-background;
+    }
+  }
+
+  // Leaf rows only (the `<mat-tree-node>` host element, NOT the parent
+  // `<div class="mat-tree-node">`): let the primary content grow so any
+  // trailing element provided by the consumer template (a menu, buttons,
+  // an icon, etc.) is pushed to the end of the row. This is content-agnostic
+  // on purpose — the library does not need to know what the trailing element
+  // is, so it keeps working no matter how the consumer composes the template.
+  mat-tree-node.mat-tree-node {
+    display: flex;
+    align-items: center;
+
+    > :first-child {
+      flex: 1 1 auto;
+      min-width: 0; // allow long text to truncate instead of pushing the action out
+    }
+  }
+}

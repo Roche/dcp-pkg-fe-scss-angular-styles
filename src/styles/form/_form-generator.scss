@@ -1,0 +1,320 @@
+@use "@angular/material" as mat;
+@import '../variables';
+
+app-dc-string-input, odcp-fg-string-input {
+  display: block;
+  width: 100%;
+}
+
+app-dc-precision-number, odcp-fg-precision-number {
+  display: block;
+  width: 100%;
+}
+.mat-select-filter_wrap.mat-mdc-form-field {
+  width: 100%;
+  input {
+    padding: 0 10px 6px;
+  }
+}
+odcp-form-generator {
+
+  .form-array {
+    grid-column: 1/-1;
+  }
+
+  .form-description {
+    font-size: 10px !important;
+  }
+}
+odcp-fg-description {
+  .odcp-title {
+    color: $primary-color !important;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  .odcp-hint-container {
+    margin-bottom: 0 !important;
+    margin-top: 4px !important;
+  }
+}
+
+odcp-form-generator-hint {
+  .odcp-hint {
+    font-size: 0.8rem !important;
+    color: $secondary-color !important;
+  }
+}
+app-dc-numeric-input, odcp-fg-numeric-input {
+  display: block;
+  width: 100%;
+}
+app-dc-multistring-input, odcp-fg-multistring-input {
+  display: block;
+  width: 100%;
+
+  .mat-mdc-chip {
+    padding-right: 0 !important;
+  }
+
+  .mat-mdc-chip-row.dropdown-chip {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .mat-mdc-chip-row.dropdown-chip .mdc-evolution-chip__cell--primary {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .mat-mdc-chip-row.dropdown-chip .chip-label {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .multistring {
+    &_chips-grid {
+      padding-left: 6px;
+    }
+    &_chip {
+      margin-left: 2px !important;
+      margin-right: 2px !important;
+      padding-right: 0 !important;
+      --mdc-chip-label-text-size: 14px !important;
+      --mdc-chip-label-text-weight: 500 !important;
+      .mdc-evolution-chip__action {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+      }
+      .mdc-evolution-chip__action--trailing {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+      }
+    }
+  }
+}
+
+app-dc-group, odcp-fg-group {
+  display: block;
+  width: 100%;
+
+  .form-generator_group {
+    .mfm-paper-content_title {
+      margin-bottom: 0;
+    }
+
+    &_form {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, 260px);
+      grid-template-rows: auto;
+    }
+
+    &_section {
+      border-radius: 0;
+      box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+
+      &:last-child {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+
+app-dc-multiselect, odcp-fg-multiselect {
+  display: block;
+  width: 100%;
+
+  .form-generator_multiselect {
+    .k-input-values {
+      min-height: 34px;
+    }
+  }
+  .mat-mdc-chip {
+    padding-right: 0 !important;
+  }
+
+
+  .mat-mdc-select .mat-mdc-select-trigger mat-chip-listbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .mat-mdc-select .mat-mdc-select-trigger .mat-mdc-chip-row.dropdown-chip {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .mat-mdc-select
+  .mat-mdc-select-trigger
+  .mat-mdc-chip-row.dropdown-chip
+  .mdc-evolution-chip__cell--primary {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .mat-mdc-select
+  .mat-mdc-select-trigger
+  .mat-mdc-chip-row.dropdown-chip
+  .mdc-evolution-chip__text-label,
+  .mat-mdc-select
+  .mat-mdc-select-trigger
+  .mat-mdc-chip-row.dropdown-chip
+  .chip-label {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .search-select-all {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    justify-content: space-between;
+
+    .select-all-option {
+      background-color: transparent !important;
+    }
+  }
+}
+body .form-generator_multiselect .mat-mdc-chip.mat-mdc-standard-chip.mat-mdc-chip-with-trailing-icon {
+  padding-right: 0;
+}
+
+app-dc-drop-down, odcp-fg-drop-down {
+  display: block;
+  width: 100%;
+  .close-icon {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    line-height: 16px;
+    color: #73abe3;
+    opacity: .54;
+    transition: opacity 0.2s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+app-dc-date-time, odcp-fg-date-time {
+  display: block;
+  width: 100%;
+
+  .datetime-input {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid #1976d2 !important;
+    background: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+    font-size: inherit !important;
+    width: 100%;
+  }
+
+
+  .datetime-input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .custom-date-picker {
+    height: 55px;
+    display: inline-block;
+  }
+
+  .date-label {
+    font-size: 0.78rem;
+    color: #1976d2 !important;
+  }
+
+}
+
+
+.form-array {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+
+  .form-generator_array {
+    &_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &_element {
+      &_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-grow: 1;
+        padding-right: 20px;
+      }
+      &_content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+    }
+    &_form {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, 260px);
+      grid-template-rows: auto;
+    }
+    &_button-remove {
+      button {
+        min-width: 36px !important;
+        width: 36px;
+        height: 36px;
+        padding: 0 !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        mat-icon {
+          margin: 0;
+          width: 18px;
+          height: 18px;
+          font-size: 18px;
+          line-height: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+    &_error {
+      margin-left: 20px;
+      margin-right: auto;
+      padding: 0 !important;
+    }
+  }
+}
+
+.odcp-paper-content {
+  &_title {
+    color: mat.get-color-from-palette($mat-white, A400);
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.93px;
+  }
+}

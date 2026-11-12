@@ -1,0 +1,45 @@
+@import "../variables";
+
+.gxp-label {
+  --gxp-icon-font-size: 12px;
+  --gxp-icon-height: 24px;
+  --gxp-icon-letter-spacing: 1px;
+  --gxp-icon-border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--gxp-icon-font-size);
+  line-height: var(--gxp-icon-height);
+  font-weight: bold;
+  height: var(--gxp-icon-height);
+  letter-spacing: var(--gxp-icon-letter-spacing);
+  color: white;
+  border-radius: var(--gxp-icon-border-radius);
+  background: $gxp-green;
+  text-transform: none;
+
+  span {
+    display: none;
+    font-size: var(--gxp-icon-font-size);
+    line-height: var(--gxp-icon-height);
+  }
+
+  &-none {
+    background: $gxp-red;
+    span {
+      display: inline;
+    }
+  }
+
+  &--small {
+    --gxp-icon-font-size: 10px !important;
+    --gxp-icon-height: 18px !important;
+    --gxp-icon-letter-spacing: .8px !important;
+    --gxp-icon-border-radius: 3px !important;
+    padding: 0 4px !important;
+  }
+  &--disabled {
+    background: $disabled-color;
+  }
+}

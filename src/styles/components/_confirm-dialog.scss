@@ -1,0 +1,22 @@
+@import "../variables";
+
+.odcp-confirm-dialog {
+  &_button {
+    text-transform: uppercase !important;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  &_cancel {
+    background: $lighter-blue !important;
+    color: runtime-primary() !important;
+  }
+  &_confirm {
+    background: runtime-primary() !important;
+    color: $white !important;
+  }
+  &_message {
+    color: $text-color-dark;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}

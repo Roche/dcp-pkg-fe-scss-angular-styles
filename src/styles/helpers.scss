@@ -1,0 +1,287 @@
+@use "@angular/material" as mat;
+
+$fullheight: 100vh;
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.cursor-not-allowed {
+   cursor: not-allowed !important;
+ }
+.cursor-text {
+  cursor: text;
+}
+.cursor-move {
+  cursor: move !important;
+}
+
+.align-content-baseline {
+  align-content: baseline;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.pointer-events-all {
+  pointer-events: all;
+}
+
+.full-width {
+  width: 100%;
+}
+.height-100 {
+  height: 100%;
+}
+.height-100vh {
+  height: 100vh;
+}
+//Three dots (multiline) on every element that goes out of the box
+.three-dots {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+//Three dots (singleline) perfect world  width need to be added
+.three-dots-no-wrap {
+  @extend .full-width;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.white-space {
+  &-normal {
+    white-space: normal;
+  }
+  &-pre-line {
+    white-space: pre-line;
+  }
+}
+
+.no-copy {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+}
+
+//Positioning
+.position {
+  &-absolute {
+    position: absolute;
+  }
+  &-relative {
+    position: relative;
+  }
+  &-fixed {
+    position: fixed;
+  }
+}
+
+//floats
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.full-height {
+  height: $fullheight;
+  &.fit {
+    height: calc( (#{$fullheight} - 50px) - 50px);
+  }
+}
+.width-auto {
+  width: auto !important;
+}
+.max {
+  &-height-100 {
+    max-height: 100%;
+  }
+  &-height-50 {
+    max-height: 50%;
+  }
+  &-width-100 {
+    max-width: 100%;
+  }
+  &-width-50 {
+    max-width: 50%;
+  }
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+
+.overflow {
+  &-hidden {
+    overflow: hidden;
+  }
+}
+.max-width {
+  max-width: 780px;
+}
+
+.user-select-auto {
+  user-select: auto !important;
+}
+
+.user-select-none {
+  user-select: none !important;
+}
+
+.background-transparent {
+  background: transparent !important;
+}
+
+@mixin scrollbar($palette: $mat-white, $elevation: A200) {
+  @supports not (-webkit-font-smoothing: antialiased) {
+    /* FF 64 styles and CSS Scrolbar Draft */
+    scrollbar-width: thin;
+    scrollbar-color: mat.get-color-from-palette($palette, $elevation) mat.get-color-from-palette($palette, $elevation, .2);
+  }
+
+  @supports (-webkit-font-smoothing: antialiased) {
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: none;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: mat.get-color-from-palette($palette, $elevation);
+      -webkit-box-shadow: inset 0 0 6px mat.get-color-from-palette($palette, $elevation);
+    }
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background: mat.get-color-from-palette($palette, $elevation);
+    }
+  }
+}
+
+
+// Runtime-themed grid scrollbar. Without runtime colors the fallback
+// color-mix(#2855d2 80%, black) resolves to the previous #2044a8 (same formula
+// as @open-dcp/styles base/_helpers.scss).
+$scrollbar-grid-color: var(--dcp-scrollbar-color, color-mix(in srgb, var(--dcp-branding-primary-color, #2855d2) 80%, black));
+
+@mixin scrollbarGrid() {
+  @supports not (-webkit-font-smoothing: antialiased) {
+    /* FF 64 styles and CSS Scrolbar Draft */
+    scrollbar-width: thin;
+    scrollbar-color: $scrollbar-grid-color color-mix(in srgb, $scrollbar-grid-color 20%, transparent);
+  }
+
+  @supports (-webkit-font-smoothing: antialiased) {
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: none;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: $scrollbar-grid-color;
+      -webkit-box-shadow: inset 0 0 6px $scrollbar-grid-color;
+    }
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background: $scrollbar-grid-color;
+    }
+  }
+}
+
+@mixin scrollbarMain() {
+  @supports not (-webkit-font-smoothing: antialiased) {
+    /* FF 64 styles and CSS Scrolbar Draft */
+    scrollbar-width: thin;
+    scrollbar-color: #c7c9cd rgba(#c7c9cd, .2);
+  }
+
+  @supports (-webkit-font-smoothing: antialiased) {
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: none;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: #c7c9cd;
+      -webkit-box-shadow: inset 0 0 6px #c7c9cd;
+    }
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background: #c7c9cd;
+    }
+  }
+}
+
+@mixin beforeCardBox {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 6px;
+  border-radius: 7px 0 0 7px;
+  background: mat.get-color-from-palette($primary-dc, 0.25);
+}
+
+@mixin beforeCardBoxHover {
+  @include mat.elevation(8);
+}
+
+
+
+@mixin asideHeader {
+  padding: 10px 0;
+  border-top: 1px solid mat.get-color-from-palette($mat-white, A100);
+  border-bottom: 1px solid mat.get-color-from-palette($mat-white, A100);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.2;
+  .mat-icon {
+    position: relative;
+    top: -4px;
+  }
+}
+
+@mixin asideHeaderBlue {
+  color: mat.get-color-from-palette($mf-blue, 500);
+}
+
+@mixin asideHeaderForList {
+  margin-bottom: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}

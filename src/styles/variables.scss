@@ -1,0 +1,234 @@
+@use "@angular/material" as mat;
+/*@import "./test";*/
+@import "@open-dcp/styles/scss";
+@import '@angular/material';
+
+$font-family: "DcpFont", sans-serif;
+$primary-contrast: $white !default;
+$primary-dc: $branding-primary-color !default; //#3f51b5 !default;
+$accent: $primary-dc;
+$text-color: $text-color-dark !default;
+
+$dashboard_blue:#0066CC;
+$dashboard_green: #00965E;
+$dashboard_error_red: #E40046;
+
+// Subtle light-blue background used to highlight an interactive row on hover
+// (tree rows, grid rows, ...). A very pale blue (mf-blue 100) that matches the
+// hover color from the previous grid implementation.
+$row-hover-background: #F7FAFE !default;
+
+$font-size: 14px !default;
+$font-size-xs: 10px !default;
+$font-size-sm: 12px !default;
+$font-size-lg: 16px !default;
+
+// Spacer
+$spacer: 1em !default;
+$spacer-x: $spacer !default;
+$spacer-y: $spacer !default;
+
+//Dashboard
+
+
+$dark-primary-text: $text-color-dark !default;
+$light-primary-text: $white !default;
+
+$mf-green: (
+  50: #26d9a6,
+  100: #26d9a6,
+  200: #26d9a6,
+  300: #26d9a6,
+  400: #26d9a6,
+  500: #10cf98,
+  600: #10cf98,
+  700: $gxp-green,
+  800: #10cf98,
+  900: #10cf98,
+  A100: #05825e,
+  A200: #05825e,
+  A400: #05825e,
+  A700: #00965E,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+$mf-red: (
+  50: #ffa591,
+  100: #ffa591,
+  200: #ffa591,
+  300: #ffa591,
+  400: #ffa591,
+  500: #fc8f76,
+  600: #fc8f76,
+  700: $gxp-red,
+  800: #fc8f76,
+  900: #fc8f76,
+  A100: #af5541,
+  A200: #af5541,
+  A400: #af5541,
+  A700: #af5541,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+$mf-yellow: (
+  50: #ffdb8e,
+  100: #ffdb8e,
+  200: #ffdb8e,
+  300: #ffdb8e,
+  400: #ffdb8e,
+  500: #f7cc71,
+  600: #f7cc71,
+  700: $warning-color,
+  800: #f7cc71,
+  900: #f7cc71,
+  A100: #aa873d,
+  A200: #aa873d,
+  A400: #aa873d,
+  A700: #aa873d,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+$mf-blue: (
+  50: $light-blue,
+  100: #F7FAFE,
+  200: #F0F6FB,
+  300: $lighter-blue,
+  400: #4d7af7,
+  500: #4875f5,
+  600: $branding-secondary-color,
+  700: $branding-primary-color,
+  800: #446df5,
+  900: #4169db,
+  A100: #2044a8,
+  A200: #2044a8,
+  A300: #C3D7FD,
+  A400: #2044a8,
+  A500: #C3D7FD,
+  A700: #353f52,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+
+$primaryTheme: $mf-blue;
+$accentTheme: $mf-yellow;
+$warnTheme: $mf-red;
+$successTheme: $mf-green;
+$elevation: 700;
+$primary-material: mat.define-palette($primaryTheme, $elevation);
+$accent-material:  mat.define-palette($accentTheme, $elevation);
+$warn-material:    mat.define-palette($warnTheme, $elevation);
+$success-material:    mat.define-palette($successTheme, $elevation);
+
+
+$mat-white: (
+  50: #ffffff,
+  100: #ffffff,
+  200: #ffffff,
+  500: #f9f9f9,
+  600: #fbfbfb,
+  700: #f6f6f6,
+  800: #f4f4f4,
+  900: #f4f7f9,
+  A100: #e8ebee,
+  A200: #c7c9cd,
+  A400: #B1B3B3,
+  A700: #9b9b9b,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+$mat-black: (
+  400: $text-color-disabled,
+  500: $text-color-disabled,
+  800: #242424,
+  900: #232323,
+  A100: #171717,
+  A200: $dark-color,
+  A400: #0e0e0e,
+  A700: black,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);

@@ -1,0 +1,22 @@
+@use "@angular/material" as mat;
+@import "./variables";
+
+@include mat.all-component-typographies();
+@include mat.core();
+
+$custom-typography: mat.define-typography-config(
+  $font-family: $font-family,
+  $headline-1: mat.define-typography-level(32px, 48px, 700),
+  $body-1: mat.define-typography-level(14px, 24px, 500)
+);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary-material,
+    accent: $accent-material,
+    warn: $warn-material,
+  ),
+  typography: $custom-typography
+));
+
+@include mat.all-component-themes($theme);

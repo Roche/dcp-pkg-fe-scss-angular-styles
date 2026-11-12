@@ -1,0 +1,25 @@
+@import "../variables";
+
+odcp-page-create-menu, odcp-page-add-button {
+  .mat-mdc-unelevated-button, .mat-mdc-raised-button, .mat-mdc-fab, .mat-mdc-mini-fab {
+    background: $light-blue;
+    color: $white;
+  }
+
+  .page-create-menu {
+    &_button {
+      &-show-extra {
+        padding: 0;
+        width: 36px;
+        min-width: 36px;
+        height: 36px;
+      }
+    }
+  }
+
+  .page-create-menu_button-show-extra .mdc-button__label  {
+    font-size: 14px;
+    line-height: 36px;
+    font-weight: bold;
+  }
+}
