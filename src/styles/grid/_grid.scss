@@ -6,17 +6,25 @@ odcp-grid {
   .dcp-table-container {
     overflow: auto; /* Important for virtual scrolling */
     position: relative; /* For sticky header to work correctly */
+  }
 
-    .dcp-table-header {
-      display: flex;
-      flex-direction: row;
-      justify-content: end;
+  .dcp-table-header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
 
-      .dcp-download-button {
-        background: transparent;
-        border: none;
-        cursor: pointer;
-      }
+    .dcp-search-container {
+      margin-right: auto;
+    }
+
+    .dcp-download-button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      margin-left: auto;
     }
   }
 }

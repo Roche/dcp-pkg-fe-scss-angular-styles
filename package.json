@@ -1,6 +1,6 @@
 {
   "name": "@open-dcp/angular-styles",
-  "version": "17.0.41",
+  "version": "17.1.0",
   "main": "src/index.scss",
   "style": "src/index.scss",
   "exports": {
